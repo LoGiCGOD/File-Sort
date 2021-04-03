@@ -15,19 +15,31 @@ for fname in folders:
 
 directory = input("Enter the location or path:")
 # os.listdir() will take all the files and folders in the user given path and put it in a list
-
+other_name = input("Enter the folder name for unknown files")
 all_files = os.listdir(directory)
 # all the files and folders are now in all_files
 print(all_files)
 
 
-def mov(extension, filename):  # def mov(extension, filename):
+def mov(extension, filename):
+
+    # def mov(extension, filename):
     # print(extension, filename)
+    # try this to check the format and name of the file
+    find = False
     for fname in folders:
-        # try this to check the format and name of the file
         if "."+extension in folders[fname]:
             if fname not in os.listdir(directory):
                 os.mkdir(os.path.join(directory, fname))
+            shutil.move(os.path.join(directory, filename),
+                        os.path.join(directory, fname))
+            find = True
+            break
+    if find != True:
+        if other_name not in os.listdir(directory):
+            os.mkdir(os.path.join(directory, other_name))
+        shutil.move(os.path.join(directory, filename),
+                    os.path.join(directory, other_name))
 
 
 for i in all_files:
