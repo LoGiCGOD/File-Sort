@@ -31,7 +31,7 @@ all_files = os.listdir(directory)
 # all the files and folders are now in all_files
 # print(all_files)
 
-length = len(all_files)
+length = len(all_files)  # to count total no of files and also remaining files
 count = 1
 
 
