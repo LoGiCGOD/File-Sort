@@ -6,7 +6,7 @@ folders = {                                  # Dictionary
     'audios': ['.wav', '.mp3'],
     'images': ['.png', '.jpg'],
     'documents': ['.doc', '.xlsx', '.xls', '.pdf', '.zip', '.rar'],
-
+    'softwares': ['.exe']
 }
 
 
@@ -30,6 +30,9 @@ rename_folder()
 all_files = os.listdir(directory)
 # all the files and folders are now in all_files
 # print(all_files)
+
+length = len(all_files)
+count = 1
 
 
 def mov(extension, filename):
@@ -59,3 +62,5 @@ for i in all_files:
         print("file exists")
         # i.split will extract the extension while i will give the whole filename
         mov(i.split(".")[-1], i)
+        print(f"Total files: {length} | Done: {count} | Left: {length-count}")
+    count += 1
