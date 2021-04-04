@@ -29,7 +29,7 @@ rename_folder()
 
 all_files = os.listdir(directory)
 # all the files and folders are now in all_files
-print(all_files)
+# print(all_files)
 
 
 def mov(extension, filename):
