@@ -8,6 +8,15 @@ folders = {                                  # Dictionary
     'documents': ['.doc', '.xlsx', '.xls', '.pdf', '.zip', '.rar'],
 
 }
+
+
+def rename_folder():
+    for folder in os.listdir(directory):
+        if os.path.isdir(os.path.join(directory, folder)) == True:
+            os.rename(os.path.join(directory, folder),
+                      os.path.join(directory, folder.lower()))
+
+
 print(folders)
 for fname in folders:
     print(fname, folders[fname])  # fname ~ foldername
@@ -16,6 +25,8 @@ for fname in folders:
 directory = input("Enter the location or path:")
 # os.listdir() will take all the files and folders in the user given path and put it in a list
 other_name = input("Enter the folder name for unknown files")
+rename_folder()
+
 all_files = os.listdir(directory)
 # all the files and folders are now in all_files
 print(all_files)
